@@ -1,10 +1,12 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>qclt.mofcom.gov.cn</title>
+    <meta name="robots" content="noindex" />
+    <title>404 - 页面未找到</title>
     <style>
+      /* 原详情页面样式暂时保留
       * {
         padding: 0;
         margin: 0;
@@ -61,9 +63,238 @@
         padding: 10px 5px;
         font-size: 18px;
       }
+      */
+
+      :root {
+        --primary: #9b0808;
+        --primary-light: #d70b08;
+        --text: #33363a;
+        --muted: #73777d;
+        --line: #e6e8eb;
+        --surface: #f6f7f9;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        min-width: 320px;
+        min-height: 100vh;
+        color: var(--text);
+        background: var(--surface);
+        font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
+      }
+
+      .error-page {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        border-top: 12px solid var(--primary-light);
+        background:
+          radial-gradient(circle at 50% 45%, rgba(155, 8, 8, 0.05), transparent 32%),
+          #fff;
+      }
+
+      .site-header {
+        display: flex;
+        width: min(1120px, calc(100% - 48px));
+        margin: 0 auto;
+        padding: 22px 0 18px;
+        align-items: center;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .site-logo {
+        width: 62px;
+        height: auto;
+        flex: 0 0 auto;
+      }
+
+      .site-name {
+        margin-left: 12px;
+        color: #383637;
+        line-height: 1.45;
+      }
+
+      .site-name-cn {
+        font-size: 15px;
+        letter-spacing: 0.16em;
+      }
+
+      .site-name-platform {
+        font-size: 22px;
+        font-weight: 600;
+      }
+
+      .error-content {
+        display: grid;
+        width: min(1000px, calc(100% - 48px));
+        margin: auto;
+        padding: 70px 0 100px;
+        grid-template-columns: minmax(260px, 0.9fr) minmax(320px, 1.1fr);
+        align-items: center;
+        gap: 72px;
+      }
+
+      .error-visual {
+        position: relative;
+        display: grid;
+        min-height: 300px;
+        place-items: center;
+      }
+
+      .error-ring {
+        position: absolute;
+        width: min(310px, 78vw);
+        aspect-ratio: 1;
+        border: 1px solid rgba(155, 8, 8, 0.13);
+        border-radius: 50%;
+      }
+
+      .error-ring::before,
+      .error-ring::after {
+        position: absolute;
+        border: 1px solid rgba(155, 8, 8, 0.09);
+        border-radius: inherit;
+        content: "";
+        inset: 28px;
+      }
+
+      .error-ring::after {
+        inset: 58px;
+      }
+
+      .error-code {
+        position: relative;
+        z-index: 1;
+        color: var(--primary);
+        font-family: Arial, sans-serif;
+        font-size: clamp(86px, 13vw, 148px);
+        font-weight: 700;
+        letter-spacing: -0.06em;
+        line-height: 1;
+        text-shadow: 0 10px 32px rgba(155, 8, 8, 0.14);
+      }
+
+      .error-label {
+        margin-bottom: 12px;
+        color: var(--primary);
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+      }
+
+      .error-title {
+        font-size: clamp(30px, 4vw, 44px);
+        font-weight: 600;
+        line-height: 1.25;
+      }
+
+      .error-description {
+        max-width: 470px;
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.9;
+      }
+
+      .home-link {
+        display: inline-flex;
+        min-width: 142px;
+        margin-top: 32px;
+        padding: 12px 24px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--primary);
+        border-radius: 3px;
+        color: #fff;
+        background: var(--primary);
+        font-size: 15px;
+        text-decoration: none;
+        transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+      }
+
+      .home-link:hover {
+        background: #7f0505;
+        box-shadow: 0 8px 20px rgba(155, 8, 8, 0.2);
+        transform: translateY(-1px);
+      }
+
+      .home-link:focus-visible {
+        outline: 3px solid rgba(155, 8, 8, 0.25);
+        outline-offset: 3px;
+      }
+
+      .site-footer {
+        padding: 20px 24px;
+        color: #8b8e93;
+        background: var(--surface);
+        font-size: 13px;
+        text-align: center;
+      }
+
+      @media (max-width: 720px) {
+        .error-page {
+          border-top-width: 8px;
+        }
+
+        .site-header {
+          width: calc(100% - 32px);
+          padding: 16px 0;
+        }
+
+        .site-logo {
+          width: 52px;
+        }
+
+        .site-name-cn {
+          font-size: 12px;
+          letter-spacing: 0.08em;
+        }
+
+        .site-name-platform {
+          font-size: 18px;
+        }
+
+        .error-content {
+          width: calc(100% - 40px);
+          padding: 42px 0 64px;
+          grid-template-columns: 1fr;
+          gap: 28px;
+          text-align: center;
+        }
+
+        .error-visual {
+          min-height: 220px;
+        }
+
+        .error-ring {
+          width: 220px;
+        }
+
+        .error-copy {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .error-description {
+          font-size: 15px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .home-link {
+          transition: none;
+        }
+      }
     </style>
   </head>
   <body>
+    <!-- 原“报废机动车详情”页面暂时保留，不参与渲染
     <div class="box">
       <div class="header">
         <div class="header-t">
@@ -98,6 +329,25 @@
         </div>
       </div>
     </div>
-  </body>
-</html> -->
+    -->
 
+    <main class="error-page">
+
+      <section class="error-content" aria-labelledby="error-title">
+        <div class="error-visual" aria-hidden="true">
+          <div class="error-ring"></div>
+          <p class="error-code">404</p>
+        </div>
+        <div class="error-copy">
+          <p class="error-label">PAGE NOT FOUND</p>
+          <h1 class="error-title" id="error-title">抱歉，页面未找到</h1>
+          <p class="error-description">
+            您访问的页面可能已被删除、名称已更改，或暂时不可用。请检查访问地址是否正确，或返回首页继续浏览。
+          </p>
+          <a class="home-link" href="/">返回首页</a>
+        </div>
+      </section>
+
+    </main>
+  </body>
+</html>
